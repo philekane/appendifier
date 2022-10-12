@@ -1,0 +1,29 @@
+/**
+ * The following styles get applied inside the editor only.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.wp-block-plants-plants {
+	border: 1px dotted #f00;
+}
+.wp-block-event-post-date-meta-block {
+	width:15%;
+}
+.data-structure-markup label {
+	font-size: large;
+}
+.data-structure-description {
+	padding: 1em 1em 0 1em;
+	font-weight: 400;
+ }
+
+.data-structure-markup {
+	padding: 0 1em;
+}
+
+.data-structure-markup input {
+	height: 300px;
+ }
+
+

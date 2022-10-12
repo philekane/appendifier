@@ -1,0 +1,50 @@
+/**
+ * The following styles get applied both on the front of your site and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.wp-block-plants-plants {
+	background-color: #000;
+	color: #fff;
+	padding: 2px;
+}
+
+
+/**
+ * ----------------------------------------------------------------------------
+ * Frontend CSS
+ * ----------------------------------------------------------------------------
+ */
+ 
+.wp-block-image figcaption{
+    color:#A30000;
+	/*	margin-top: -1em;*/
+		margin-bottom: .5em;
+		text-align: center;
+		font-size: 60%;
+		font-style: italic;
+	}
+	.header-image figcaption{
+    color:#8A0000;
+		margin-top: 0.1em;
+		margin-bottom: .2em;
+		text-align: center;
+		font-size: 60%;
+		font-style: italic;
+		line-height: 1.2;
+	}
+	/* in order to hide from screen reader*/
+	.visually-hidden {
+		border: 0;
+		clip: rect(0 0 0 0);
+		height: auto;
+		margin: 0;
+		overflow: hidden;
+		padding: 0;
+		position: absolute;
+		width: 1px;
+		white-space: nowrap;
+		background-color:red;
+	  }
+
