@@ -1,7 +1,15 @@
 <?php
-/**
- * Calendar settings for bwetc event posts
- */
+/*
+*
+* PHP version 7.2
+*
+* @category Append_To_Head
+* @package  Biz_Sites_Etc_Append_To_Head
+* @author   Phil Kane <pkane-pluginDev@spindry.com>
+* @license  MIT https://opensource.org/licenses/MIT
+* @version  1.0.0.1
+* @link     https://business-websites-etc.com *
+*/
 
 namespace BWE\AppendToHead;
 
@@ -18,11 +26,6 @@ if (!class_exists('Settings')) {
          */
         public function __construct()
         {
-         
-            // allow editor to edit settings
-           // $role = get_role('editor');
-           //$role->add_cap('manage_options');
-
             // register actions
 			if ( is_admin() ) {
 				add_action( 'admin_init', array( $this, 'admin_init' ) );
@@ -31,7 +34,7 @@ if (!class_exists('Settings')) {
 		
         } // END public function __construct
 
-          /**
+        /**
          * Create settings Page
          *
          * @return error message
@@ -41,64 +44,57 @@ if (!class_exists('Settings')) {
             if (!current_user_can('manage_options')) {
                 wp_die(__('You do not have sufficient permissions to access this page.', 'bizsitesetc_calendar'));
             }
-            //    echo 'setting page 2';
+            
             // Render the settings template
           	include sprintf( '%s/templates/appendifier-settings.php', dirname( __FILE__ ) );
-	
-
-            // Render the settings template
-            // include sprintf("%s/templates/admin_settings.php", dirname(__FILE__));
         } // END public function plugin_settings_page()
 
-		 /**
-             * Add css styles for calendar
-             *
-             * @return void
-             */
-            function add_styles()
-            {
-                wp_enqueue_style('bwetc-calendar-style.min', plugin_dir_url(__FILE__) . 'css/style.min.css', array(), '20180915', 'all');
-            }
-            /**
-             * Add js for calendar
-             *
-             * @return void
-             */
-            function add_js()
-            {
-                wp_enqueue_script('calendar', plugin_dir_url(__FILE__) . 'js/calendar.js');
-            }
+        /**
+         * Add css styles for calendar
+         *
+         * @return void
+         */
+        function add_styles()
+        {
+            wp_enqueue_style('bwetc-calendar-style.min', plugin_dir_url(__FILE__) . 'css/style.min.css', array(), '20180915', 'all');
+        }
 
-			 /**
-             * Add the  styles to the page
-             *
-             * @return void
-             */
-            function add_admin_styles()
-            {
-                wp_enqueue_style('admin-styles', plugin_dir_url(__FILE__) . 'css/admin.style.css', array(), '20180915', 'all');
-            }
+        /**
+         * Add js for calendar
+         *
+         * @return void
+         */
+        function add_js()
+        {
+            wp_enqueue_script('calendar', plugin_dir_url(__FILE__) . 'js/calendar.js');
+        }
+
+        /**
+         * Add the  styles to the page
+         *
+         * @return void
+         */
+        function add_admin_styles()
+        {
+            wp_enqueue_style('admin-styles', plugin_dir_url(__FILE__) . 'css/admin.style.css', array(), '20180915', 'all');
+        }
+
         /**
          * Hook into WP's adminInit action hook
          * Fields - calendar name, width, font, colors?
          */
         public function admin_init()
         {
-          
-          //  add_action('admin_enqueue_scripts', array( &$this, 'add_admin_styles' ) );
-            
             register_setting('bwe_appendifier_settings-group', 'bwe_top_meta_data');
             register_setting('bwe_appendifier_settings-group', 'bwe_bottom_meta_data');
-            
 
-            // add your settings section
+           // add your settings section
            add_settings_section(
             'bwetc_Appendifier_top_input_Section',
             '',
             array(&$this, 'bwetc_Appendifier_top_input_Section'),
             'bwe_appendifier_settings'
             );
-
 
            // add your settings section
            add_settings_section(
@@ -107,8 +103,6 @@ if (!class_exists('Settings')) {
             array(&$this, 'bwetc_Appendifier_bottom_input_Section'),
             'bwe_appendifier_settings'
             );
-
-
 
             // add your setting's fields
             add_settings_field(
@@ -123,6 +117,7 @@ if (!class_exists('Settings')) {
                     'type' => 'textarea',
                 )
             );
+
             add_settings_field(
                 'bwe_appendifier_settings-bwe_bottom_meta_data',
                 'Markup ( appends to the bottom of the HEAD element )',
@@ -135,16 +130,14 @@ if (!class_exists('Settings')) {
                     'type' => 'textarea',
                 )
             );
-
-
             // Possibly do additional adminInit tasks
         } // END public static function activate
 
-         /**
-		 * Add_menu
-		 *
-		 * @return void
-		 */
+        /**
+		* Add_menu
+		*
+		* @return void
+		*/
 		public function add_menu() {
 
 			// Add a page to manage this plugin's settings.
@@ -173,9 +166,8 @@ if (!class_exists('Settings')) {
             // Get the value of this setting
             $value = get_option($field);
 
-            // echo a proper input type="text"
+            // echo a proper input type="textarea"
             echo sprintf('<textarea name="%s" id="%s"  rows="10" cols="50">%s</textarea>',  $field, $field, esc_html( $value ) );
-           
 
         } // END public function settings_field_input_text($args)
 
@@ -191,7 +183,6 @@ if (!class_exists('Settings')) {
           // echo '<p>' . __( 'Append META data' ) . '</p>';
           echo '<h3>'. __('Google Analytics: ') . '</h3>';
           echo '<p>' . __( 'Add google analytics tracking code as the first item into the HEAD element.') . '</p>';
-     
 
         }
 
@@ -208,7 +199,7 @@ if (!class_exists('Settings')) {
            echo '<p>' . __( 'Google recommends using the JSON-LD script tag in the HEAD element of a page.' ) . '</p>';
            echo '<p>' . __( 'Go to Google\'s Structured Data Markup Helper tool at <a href="https://www.google.com/webmasters/markup-helper/u/0/" >https://www.google.com/webmasters/markup-helper/u/0/</a> and tag the data on your page then copy html code.' ) . '</p>';
            echo '<p>' . __( 'After getting the JSON-LD structured data from Google\'s helper tool, add html snippet to the Mark Up TEXTAREA element below which will append the code to the bottom of the HEAD element.') . '</p>';
-            
+
         }
 
          /**

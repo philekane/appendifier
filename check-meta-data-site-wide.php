@@ -25,7 +25,7 @@ class Check_Meta_Data_Site_Wide {
 	}
 
 	/**
-	 * adds google analytics script to the head of page 
+	 * adds google analytics script to the head of page
 	 *
 	 * @return void
 	 */

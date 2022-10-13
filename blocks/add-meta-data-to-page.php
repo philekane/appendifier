@@ -90,7 +90,8 @@ class Data_Structure_Meta {
 		if ( $post ) {
 			$post_id = $post->ID;
 			$post_meta = get_post_meta( $post_id );
-			if ( isset( $post_meta['bwetc_data_structure_markup'] ) ) {
+			
+			if ( isset( $post_meta['bwetc_data_structure_markup'] ) && ( !empty( $post_meta['bwetc_data_structure_markup'][0] ) ) ) {
 				$data_structure_markup = esc_html( $post_meta['bwetc_data_structure_markup'][0] );
 
 				global $wp_query;

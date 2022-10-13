@@ -56,7 +56,6 @@ if (!class_exists('BWE\AppendToHead\Append_To_Head')) {
      */
     class Append_To_Head
     {
-
         /**
          * Construct the plugin object
          */
