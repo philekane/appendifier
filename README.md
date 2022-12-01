@@ -13,7 +13,7 @@ This plugin allows users to add snippets of code to the head tag.
 
 ## Description ##
 
-There is a textarea input to either add code to the upper section of the head tag and one for the lower section.
+There is a textarea input to either add code to the upper section of the \<head> tag and one for the lower section.
 
 This can be used to add the older google code snippet or a <script> tag or <style> tag.
 
