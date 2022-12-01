@@ -1,6 +1,6 @@
 # Appendifier #
 **Contributors:** Phil Kane from https://business-websites-etc.com
-**Donate link:** https://example.com/
+**Donate link:** paypal.me/PhilipKane
 **Tags:** Appendifier, append to head tag, google tag manager
 **Requires at least:** 5.6
 **Tested up to:** 5.9
@@ -9,17 +9,17 @@
 **License:** GPLv2 or later
 **License URI:** https://www.gnu.org/licenses/gpl-2.0.html
 
-This plugin allows users to add snippets of code to the <head> tag.
+This plugin allows users to add snippets of code to the head tag.
 
 ## Description ##
 
-There is a textarea input to either add code to the upper section of the <head> tag and one for the lower section.
+There is a textarea input to either add code to the upper section of the head tag and one for the lower section.
 
 This can be used to add the older google code snippet or a <script> tag or <style> tag.
 
 ## Google Tag Manager ##
 
-If you are using the Google Tag Manager, you can get the Container ID from your google account and add it to an input field. This will add the code snippet in the upper portion of the <head> tag and the code snippet after the opening <body> tag.
+If you are using the Google Tag Manager, you can get the Container ID from your google account and add it to an input field. This will add the code snippet in the upper portion of the head tag and the code snippet after the opening body tag.
 
 
 ## Installation ##
@@ -38,20 +38,20 @@ Example answer.
 
 ## Screenshots ##
 
-### 1. This screen shot is the calendar displayed from the shortcode for all events. ###
+### 1. This screen shot of the Appendifier settings page. ###
 ![Screen Shot](./assets/images/appendifier.png)
 
 == Changelog ==
 
 = 1.1.0 =
 
-* Added input field on setting page in order to add Google Tag Manager code snippets to the <head> tag and the code snippet after the <body> tag
+* Added input field on setting page in order to add Google Tag Manager code snippets to the head tag and the code snippet after the body tag
 
 ## Features ##
 
-1. Add code to the <head> tag, either at the top of the element or at the bottom.
+1. Add code to the head tag, either at the top of the element or at the bottom.
 
-2. Add Google Tag Manager code snippets to the <head> tag and the code snippet after the <body> tag.
+2. Add Google Tag Manager code snippets to the head tag and the code snippet after the body tag.
 
 
 
