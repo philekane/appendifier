@@ -1,6 +1,6 @@
 # Appendifier #
 **Contributors:** Phil Kane from https://business-websites-etc.com
-**Donate link:** paypal.me/PhilipKane
+**Donate link:** https://paypal.me/PhilipKane
 **Tags:** Appendifier, append to head tag, google tag manager
 **Requires at least:** 5.6
 **Tested up to:** 5.9
