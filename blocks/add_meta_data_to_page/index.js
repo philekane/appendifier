@@ -22,7 +22,6 @@
         keywords: [
             __( 'data structure', 'bwe-data-structure' ),
             __( 'google', 'bwe-data-structure' ),
-            __( 'google', 'bwe-data-structure' ),
             __( 'append', 'bwe-data-structure' ),
         ],
 
@@ -77,7 +76,17 @@
         },
         example: {
             attributes: {
-              //this shows the preview of what the block looks like.
+                //this shows the preview of what the block looks like.
+                /*backgroundType: 'gradient',
+                backgroundGradient: 'linear-gradient(-225deg, rgb(255, 5, 124) 0%, rgb(141, 11, 147) 50%, rgb(50, 21, 117) 100%)',
+                align: 'center',
+                quoteStyle: 'quotes',
+                paddingTop: 30,
+                paddingBottom: 30,
+                blockquoteAlign: 'center',
+                textColor: '#FFFFFF',
+                content: __( 'An inspiring quote...', 'wp-presenter-pro' ),
+                */
             },
         },
 	} );

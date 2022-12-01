@@ -87,6 +87,7 @@ if (!class_exists('Settings')) {
         {
             register_setting('bwe_appendifier_settings-group', 'bwe_top_meta_data');
             register_setting('bwe_appendifier_settings-group', 'bwe_bottom_meta_data');
+            register_setting('bwe_appendifier_settings-group', 'bwe_gtm_id');
 
            // add your settings section
            add_settings_section(
@@ -102,6 +103,20 @@ if (!class_exists('Settings')) {
             '',
             array(&$this, 'bwetc_Appendifier_bottom_input_Section'),
             'bwe_appendifier_settings'
+            );
+
+            // add your setting's fields
+            add_settings_field(
+                'bwe_appendifier_settings-bwe_gtm_id',
+                'Google Tag Manager Id ( e.g., GTM-XXXXXX )',
+                array(&$this, 'settingsFieldInputText'),
+                'bwe_appendifier_settings',
+                'bwetc_Appendifier_top_input_Section',
+                array(
+                    'field' => 'bwe_gtm_id',
+                    'default' => '',
+                    'type' => 'text',
+                )
             );
 
             // add your setting's fields
@@ -166,9 +181,12 @@ if (!class_exists('Settings')) {
             // Get the value of this setting
             $value = get_option($field);
 
-            // echo a proper input type="textarea"
-            echo sprintf('<textarea name="%s" id="%s"  rows="10" cols="50">%s</textarea>',  $field, $field, esc_html( $value ) );
-
+            if ( 'textarea' === $type) {
+                // echo a proper input type="textarea"
+                echo sprintf('<textarea name="%s" id="%s"  rows="10" cols="50">%s</textarea>',  $field, $field, esc_html( $value ) );
+            } else {
+                echo sprintf('<input type="%s" name="%s" id="%s" value=%s>', $type, $field, $field, esc_html( $value ) );
+            }
         } // END public function settings_field_input_text($args)
 
          /**
@@ -181,8 +199,8 @@ if (!class_exists('Settings')) {
            // Think of this as help text for the section.
            //echo '<h3>'. __('Meta Data: ') . '</h3>';
           // echo '<p>' . __( 'Append META data' ) . '</p>';
-          echo '<h3>'. __('Google Analytics: ') . '</h3>';
-          echo '<p>' . __( 'Add google analytics tracking code as the first item into the HEAD element.') . '</p>';
+          echo '<h3>'. __('Google Tag Manager ') . '</h3>';
+          echo '<p>' . __( 'If you are using the Google Tag Manager, get the Container ID from your account and add it to the input field below. This will add the code snippet in the upper portion of the head tag and the code snippet after the opening body tag.') . '</p>';
 
         }
 

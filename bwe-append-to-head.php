@@ -77,6 +77,8 @@ if (!class_exists('BWE\AppendToHead\Append_To_Head')) {
             	add_filter("plugin_action_links_$plugin", array( $this, 'plugin_settings_link' ));
 			}
 
+            
+
         } // END public function __construct
 
         // Add the settings link to the plugins page
