@@ -9,7 +9,7 @@
 **License:** GPLv2 or later
 **License URI:** https://www.gnu.org/licenses/gpl-2.0.html
 
-This plugin allows users to add snippets of code to the head tag.
+This plugin allows users to add snippets of code to the \<head> tag.
 
 ## Description ##
 
@@ -19,7 +19,7 @@ This can be used to add the older google code snippet or a <script> tag or <styl
 
 ## Google Tag Manager ##
 
-If you are using the Google Tag Manager, you can get the Container ID from your google account and add it to an input field. This will add the code snippet in the upper portion of the head tag and the code snippet after the opening body tag.
+If you are using the Google Tag Manager, you can get the Container ID from your google account and add it to an input field. This will add the code snippet in the upper portion of the \<head> tag and the code snippet after the opening \<body> tag.
 
 
 ## Installation ##
@@ -45,13 +45,13 @@ Example answer.
 
 = 1.1.0 =
 
-* Added input field on setting page in order to add Google Tag Manager code snippets to the head tag and the code snippet after the body tag
+* Added input field on setting page in order to add Google Tag Manager code snippets to the \<head> tag and the code snippet after the \<body> tag
 
 ## Features ##
 
-1. Add code to the head tag, either at the top of the element or at the bottom.
+1. Add code to the \<head> tag, either at the top of the element or at the bottom.
 
-2. Add Google Tag Manager code snippets to the head tag and the code snippet after the body tag.
+2. Add Google Tag Manager code snippets to the \<head> tag and the code snippet after the \<body> tag.
 
 
 
