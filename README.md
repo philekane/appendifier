@@ -27,7 +27,7 @@ If you are using the Google Tag Manager, you can get the Container ID from your 
 1. Upload `bwe_appendifier` to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
  Or
-1. `cd` into your `/wp-content/plugins/` folder and run `git clone https://philekane@bitbucket.org/philekane/bwe-appendifier.git`
+1. `cd` into your `/wp-content/plugins/` folder and run `git clone https://github.com/philekane/appendifier`
 1. Activate the plugin through the 'Plugins' menu in WordPress
 
 ## Frequently Asked Questions ##
@@ -38,6 +38,8 @@ Example answer.
 
 ## Screenshots ##
 
+### 1. This screen shot is the calendar displayed from the shortcode for all events. ###
+![Screen Shot](./assets/images/appendifier.png)
 
 == Changelog ==
 

@@ -50,36 +50,6 @@ if (!class_exists('Settings')) {
         } // END public function plugin_settings_page()
 
         /**
-         * Add css styles for calendar
-         *
-         * @return void
-         */
-        function add_styles()
-        {
-            wp_enqueue_style('bwetc-calendar-style.min', plugin_dir_url(__FILE__) . 'css/style.min.css', array(), '20180915', 'all');
-        }
-
-        /**
-         * Add js for calendar
-         *
-         * @return void
-         */
-        function add_js()
-        {
-            wp_enqueue_script('calendar', plugin_dir_url(__FILE__) . 'js/calendar.js');
-        }
-
-        /**
-         * Add the  styles to the page
-         *
-         * @return void
-         */
-        function add_admin_styles()
-        {
-            wp_enqueue_style('admin-styles', plugin_dir_url(__FILE__) . 'css/admin.style.css', array(), '20180915', 'all');
-        }
-
-        /**
          * Hook into WP's adminInit action hook
          * Fields - calendar name, width, font, colors?
          */

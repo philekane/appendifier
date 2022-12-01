@@ -54,7 +54,7 @@ class Check_Meta_Data_Site_Wide {
 	function add_tag_manager_after_body()
 	{
 		$gtm_id = get_option( 'bwe_gtm_id' );	
-		$bwe_add_gtm_js = 'js/bwe-add-gtm.js';
+		$bwe_add_gtm_js = 'assets/js/bwe-add-gtm.js';
 		wp_enqueue_script(
 			'bwe_add_gtm_js',
 			plugins_url( $bwe_add_gtm_js, __FILE__ ),
