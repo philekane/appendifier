@@ -5,12 +5,11 @@
 **Requires at least:** 5.6
 **Tested up to:** 5.9
 **Requires PHP:** 7.0
-**Stable tag:** 0.1.0
+**Stable tag:** 1.1.0
 **License:** GPLv2 or later
 **License URI:** https://www.gnu.org/licenses/gpl-2.0.html
 
 This plugin allows users to add snippets of code to the <head> tag.
-
 
 ## Description ##
 
@@ -42,12 +41,15 @@ Example answer.
 
 == Changelog ==
 
-= 1.0.0 =
-* 
+= 1.1.0 =
+
+* Added input field on setting page in order to add Google Tag Manager code snippets to the <head> tag and the code snippet after the <body> tag
 
 ## Features ##
 
-1. Add Google Tag Manager code snippets to the <head> tag and 
+1. Add code to the <head> tag, either at the top of the element or at the bottom.
+
+2. Add Google Tag Manager code snippets to the <head> tag and the code snippet after the <body> tag.
 
 
 

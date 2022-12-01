@@ -1,20 +1,9 @@
 <?php
-/**
- *
- * PHP version 7.2
- *
- * @category Append_To_Head
- * @package  Biz_Sites_Etc_Append_To_Head
- * @author   Phil Kane <pkane-pluginDev@spindry.com>
- * @license  MIT https://opensource.org/licenses/MIT
- * @version  1.0.0.1
- * @link     https://business-websites-etc.com *
- */
 /*
 Plugin Name:  Biz Sites, Etc. Appendifier
 Plugin URI:   https://plugins.business-websites-etc.com/cookie-notification
 Description:  Appendifier - appends meta data to <head> element of web page
-Version:      1.0.0.1
+Version:      1.1.0
 Author:       Phil Kane, Business Websites, Et cetera
 Author URI:   https://business-websites-etc.com/about
 License:      GPL2
