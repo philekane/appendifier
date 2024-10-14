@@ -1,4 +1,4 @@
-<?php
+<?php //phpcs:ignore: WordPress.Files.FileName.InvalidClassFileName
 /**
  * Block for adding google data structure to <head> element.
  * Can add <style> meta_ and google analytics to <head> as well
@@ -7,26 +7,25 @@
  * @package Biz_Sites_Etc_Add_To_Head_Of_Page
  */
 
-namespace BWE\AppendToHead\Blocks;
+namespace BWE\AppendToHead\Blocks; //phpcs:ignore: WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedNamespaceFound
 
 if ( ! defined( 'ABSPATH' ) ) {
-    exit; // Exit if accessed directly.
+	exit; // Exit if accessed directly.
 }
 /**
  * Block class
  */
 class Data_Structure_Meta {
 
-	 /**
-         * Construct the plugin object
-         */
-        public function __construct()
-        {
-            // Initialize Settings
-			add_action('enqueue_block_assets', [ $this, 'enqueue_front_end_assets' ]);
-			add_action('init', [ $this, 'register_meta_block' ]);
-			add_action( 'enqueue_block_editor_assets', [ $this, 'enqueue_editor_assets' ] );
-		}
+	/**
+	 * Construct the plugin object
+	 */
+	public function __construct() {
+		// Initialize Settings.
+		add_action( 'enqueue_block_assets', array( $this, 'enqueue_front_end_assets' ) );
+		add_action( 'init', array( $this, 'register_meta_block' ) );
+		add_action( 'enqueue_block_editor_assets', array( $this, 'enqueue_editor_assets' ) );
+	}
 
 	/**
 	 * Registers all block assets so that they can be enqueued through Gutenberg in
@@ -34,64 +33,71 @@ class Data_Structure_Meta {
 	 *
 	 * @see https://wordpress.org/gutenberg/handbook/blocks/writing-your-first-block-type/#enqueuing-block-scripts
 	 */
-	// register custom meta tag field
-	function register_meta_block()
-	{
+	public function register_meta_block() {
 		register_meta(
 			'post',
 			'bwetc_data_structure_markup',
-				array(
-				'show_in_rest'   => true,
-				'single'         => true,
-				'type'           => 'string',
-				),
-			);
+			array(
+				'show_in_rest' => true,
+				'single'       => true,
+				'type'         => 'string',
+			),
+		);
 	}
 
-	function enqueue_editor_assets()
-	{
+	/**
+	 * Enqueue assets
+	 *
+	 * @return void
+	 */
+	public function enqueue_editor_assets() {
 		$data_meta_editor_css = 'add_meta_data_to_page/editor.css';
 		wp_enqueue_style(
 			'data-meta-editor',
 			plugins_url( $data_meta_editor_css, __FILE__ ),
-			array()
+			array(),
+			$ver              = '1',
+			$media            = 'all',
 		);
 
 		$data_meta_index_js = 'add_meta_data_to_page/index.js';
 		wp_enqueue_script(
 			'bwetc_data-meta-index',
 			plugins_url( $data_meta_index_js, __FILE__ ),
-			array( 'wp-blocks', 'wp-element', 'wp-components', 'wp-editor', 'wp-i18n' )
+			array( 'wp-blocks', 'wp-element', 'wp-components', 'wp-editor', 'wp-i18n' ),
+			$ver            = '1',
+			$media          = 'all',
 		);
 	}
 
 	/**
 	 *  Enqueues the style.css for the frontend
 	 */
-	function enqueue_front_end_assets()
-	{
+	public function enqueue_front_end_assets() {
 		$data_meta_style_css = 'add_meta_data_to_page/style.css';
 		wp_enqueue_style(
 			'bwetc_data-meta-style',
 			plugins_url( $data_meta_style_css, __FILE__ ),
-			array()
+			array(),
+			$ver             = '1',
+			$media           = 'all',
 		);
 
 		$data_meta_json_index_js = 'add_meta_data_to_page/json-index.js';
 		wp_enqueue_script(
 			'bwetc_data-structure-markup-index',
 			plugins_url( $data_meta_json_index_js, __FILE__ ),
-			array( 'wp-blocks', 'wp-element', 'wp-components', 'wp-editor', 'wp-i18n' ),
+			array( 'wp-blocks', 'wp-element', 'wp-components', 'wp-i18n' ),
 			'false',
-			'true' // put in footer
+			'true' // put in footer.
 		);
+
 		global $post;
 
 		if ( $post ) {
-			$post_id = $post->ID;
+			$post_id   = $post->ID;
 			$post_meta = get_post_meta( $post_id );
-			
-			if ( isset( $post_meta['bwetc_data_structure_markup'] ) && ( !empty( $post_meta['bwetc_data_structure_markup'][0] ) ) ) {
+			if ( isset( $post_meta['bwetc_data_structure_markup'] ) && ( ! empty( $post_meta['bwetc_data_structure_markup'][0] ) ) ) {
 				$data_structure_markup = esc_html( $post_meta['bwetc_data_structure_markup'][0] );
 
 				global $wp_query;
@@ -105,5 +111,4 @@ class Data_Structure_Meta {
 			}
 		}
 	}
-
 }
