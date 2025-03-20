@@ -138,6 +138,7 @@ if ( ! class_exists( 'Settings' ) ) {
 		 * @return mixed input fields
 		 */
 		public function settings_field_input_text( $args ) {
+			//pr( $args, 141);
 			// Get the field name from the $args array.
 			$field   = $args['field'];
 			$default = $args['default'];
@@ -147,9 +148,9 @@ if ( ! class_exists( 'Settings' ) ) {
 
 			if ( 'textarea' === $type ) {
 				// echo a proper input type="textarea".
-				sprintf( '<textarea name="%s" id="%s"  rows="10" cols="50">%s</textarea>', $field, $field, esc_html( $value ) );
+				echo sprintf( '<textarea name="%s" id="%s"  rows="10" cols="50">%s</textarea>', $field, $field, esc_html( $value ) );
 			} else {
-				sprintf( '<input type="%s" name="%s" id="%s" value=%s>', $type, $field, $field, esc_html( $value ) );
+				echo sprintf( '<input type="%s" name="%s" id="%s" value=%s>', $type, $field, $field, esc_html( $value ) );
 			}
 		}
 
